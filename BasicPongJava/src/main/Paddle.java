@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Paddle extends Rectangle {
 	int id;
 	int yVelocity;
-	int speed = 10;
+	int speed = 2;
 	
 	Paddle(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id) {
 		super(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
@@ -20,21 +20,17 @@ public class Paddle extends Rectangle {
 		case 1:
 			if (e.getKeyCode() == KeyEvent.VK_W) {
 				setYDirection(-speed);
-				move();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_S) {
 				setYDirection(speed);
-				move();
 			}
 			break;
 		case 2:
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
 				setYDirection(-speed);
-				move();
 			}
 			if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 				setYDirection(speed);
-				move();
 			}
 			break;
 		}
@@ -67,10 +63,10 @@ public class Paddle extends Rectangle {
 	}
 	public void draw(Graphics g) {
 		if (id == 1) {
-			g.setColor(Color.blue);
+			g.setColor(Color.red);
 		}
 		else {
-			g.setColor(Color.green);
+			g.setColor(Color.black);
 		}
 		g.fillRect(x, y, width, height);
 	}
